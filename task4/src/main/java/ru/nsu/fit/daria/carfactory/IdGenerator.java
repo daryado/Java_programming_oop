@@ -1,0 +1,15 @@
+package ru.nsu.fit.daria.carfactory;
+
+import java.util.concurrent.atomic.AtomicLong;
+
+public class IdGenerator {
+    private final AtomicLong atomicLong;
+
+    public IdGenerator(){
+        atomicLong = new AtomicLong(1);
+    }
+
+    public long get(){
+        return atomicLong.getAndIncrement();
+    }
+}
